@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1339B932A0DE91000C591FB /* tvExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339B922A0DE91000C591FB /* tvExplorerApp.swift */; };
+		F1339B972A0DE91400C591FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1339B962A0DE91400C591FB /* Assets.xcassets */; };
+		F1339B9A2A0DE91400C591FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1339B992A0DE91400C591FB /* Preview Assets.xcassets */; };
+		F1339BA42A0DE91400C591FB /* tvExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BA32A0DE91400C591FB /* tvExplorerTests.swift */; };
+		F1339BAE2A0DE91400C591FB /* tvExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BAD2A0DE91400C591FB /* tvExplorerUITests.swift */; };
+		F1339BB02A0DE91400C591FB /* tvExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BAF2A0DE91400C591FB /* tvExplorerUITestsLaunchTests.swift */; };
+		F1339BBE2A0DF2CF00C591FB /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BBD2A0DF2CF00C591FB /* Show.swift */; };
+		F1339BC72A0EAAA800C591FB /* ShowDetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BC62A0EAAA800C591FB /* ShowDetalView.swift */; };
+		F1339BC92A0EB4F900C591FB /* ExplorerGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BC82A0EB4F900C591FB /* ExplorerGridItemView.swift */; };
+		F1339BCB2A0EBAA200C591FB /* ExplorerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BCA2A0EBAA200C591FB /* ExplorerGridView.swift */; };
+		F1339BCE2A0F070F00C591FB /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BCD2A0F070F00C591FB /* UIApplicationExt.swift */; };
+		F1339BD02A0F0A4200C591FB /* DynamicGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1339BCF2A0F0A4200C591FB /* DynamicGridView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1339BA02A0DE91400C591FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1339B872A0DE91000C591FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1339B8E2A0DE91000C591FB;
+			remoteInfo = tvExplorer;
+		};
+		F1339BAA2A0DE91400C591FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1339B872A0DE91000C591FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1339B8E2A0DE91000C591FB;
+			remoteInfo = tvExplorer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F1339B8F2A0DE91000C591FB /* tvExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1339B922A0DE91000C591FB /* tvExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvExplorerApp.swift; sourceTree = "<group>"; };
+		F1339B962A0DE91400C591FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1339B992A0DE91400C591FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1339B9F2A0DE91400C591FB /* tvExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tvExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1339BA32A0DE91400C591FB /* tvExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvExplorerTests.swift; sourceTree = "<group>"; };
+		F1339BA92A0DE91400C591FB /* tvExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tvExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1339BAD2A0DE91400C591FB /* tvExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvExplorerUITests.swift; sourceTree = "<group>"; };
+		F1339BAF2A0DE91400C591FB /* tvExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F1339BBD2A0DF2CF00C591FB /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		F1339BC62A0EAAA800C591FB /* ShowDetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetalView.swift; sourceTree = "<group>"; };
+		F1339BC82A0EB4F900C591FB /* ExplorerGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerGridItemView.swift; sourceTree = "<group>"; };
+		F1339BCA2A0EBAA200C591FB /* ExplorerGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerGridView.swift; sourceTree = "<group>"; };
+		F1339BCD2A0F070F00C591FB /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
+		F1339BCF2A0F0A4200C591FB /* DynamicGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicGridView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1339B8C2A0DE91000C591FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339B9C2A0DE91400C591FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339BA62A0DE91400C591FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1339B862A0DE91000C591FB = {
+			isa = PBXGroup;
+			children = (
+				F1339B912A0DE91000C591FB /* tvExplorer */,
+				F1339BA22A0DE91400C591FB /* tvExplorerTests */,
+				F1339BAC2A0DE91400C591FB /* tvExplorerUITests */,
+				F1339B902A0DE91000C591FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1339B902A0DE91000C591FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1339B8F2A0DE91000C591FB /* tvExplorer.app */,
+				F1339B9F2A0DE91400C591FB /* tvExplorerTests.xctest */,
+				F1339BA92A0DE91400C591FB /* tvExplorerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1339B912A0DE91000C591FB /* tvExplorer */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BCC2A0F06F900C591FB /* Extensions */,
+				F1339BBF2A0DF2E900C591FB /* View */,
+				F1339BBC2A0DF2C700C591FB /* Model */,
+				F1339B922A0DE91000C591FB /* tvExplorerApp.swift */,
+				F1339B962A0DE91400C591FB /* Assets.xcassets */,
+				F1339B982A0DE91400C591FB /* Preview Content */,
+			);
+			path = tvExplorer;
+			sourceTree = "<group>";
+		};
+		F1339B982A0DE91400C591FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F1339B992A0DE91400C591FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1339BA22A0DE91400C591FB /* tvExplorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BA32A0DE91400C591FB /* tvExplorerTests.swift */,
+			);
+			path = tvExplorerTests;
+			sourceTree = "<group>";
+		};
+		F1339BAC2A0DE91400C591FB /* tvExplorerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BAD2A0DE91400C591FB /* tvExplorerUITests.swift */,
+				F1339BAF2A0DE91400C591FB /* tvExplorerUITestsLaunchTests.swift */,
+			);
+			path = tvExplorerUITests;
+			sourceTree = "<group>";
+		};
+		F1339BBC2A0DF2C700C591FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BBD2A0DF2CF00C591FB /* Show.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1339BBF2A0DF2E900C591FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BC82A0EB4F900C591FB /* ExplorerGridItemView.swift */,
+				F1339BCA2A0EBAA200C591FB /* ExplorerGridView.swift */,
+				F1339BC62A0EAAA800C591FB /* ShowDetalView.swift */,
+				F1339BCF2A0F0A4200C591FB /* DynamicGridView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1339BCC2A0F06F900C591FB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1339BCD2A0F070F00C591FB /* UIApplicationExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1339B8E2A0DE91000C591FB /* tvExplorer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1339BB32A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorer" */;
+			buildPhases = (
+				F1339B8B2A0DE91000C591FB /* Sources */,
+				F1339B8C2A0DE91000C591FB /* Frameworks */,
+				F1339B8D2A0DE91000C591FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tvExplorer;
+			productName = tvExplorer;
+			productReference = F1339B8F2A0DE91000C591FB /* tvExplorer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1339B9E2A0DE91400C591FB /* tvExplorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1339BB62A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorerTests" */;
+			buildPhases = (
+				F1339B9B2A0DE91400C591FB /* Sources */,
+				F1339B9C2A0DE91400C591FB /* Frameworks */,
+				F1339B9D2A0DE91400C591FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1339BA12A0DE91400C591FB /* PBXTargetDependency */,
+			);
+			name = tvExplorerTests;
+			productName = tvExplorerTests;
+			productReference = F1339B9F2A0DE91400C591FB /* tvExplorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F1339BA82A0DE91400C591FB /* tvExplorerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1339BB92A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorerUITests" */;
+			buildPhases = (
+				F1339BA52A0DE91400C591FB /* Sources */,
+				F1339BA62A0DE91400C591FB /* Frameworks */,
+				F1339BA72A0DE91400C591FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1339BAB2A0DE91400C591FB /* PBXTargetDependency */,
+			);
+			name = tvExplorerUITests;
+			productName = tvExplorerUITests;
+			productReference = F1339BA92A0DE91400C591FB /* tvExplorerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1339B872A0DE91000C591FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F1339B8E2A0DE91000C591FB = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					F1339B9E2A0DE91400C591FB = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = F1339B8E2A0DE91000C591FB;
+					};
+					F1339BA82A0DE91400C591FB = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = F1339B8E2A0DE91000C591FB;
+					};
+				};
+			};
+			buildConfigurationList = F1339B8A2A0DE91000C591FB /* Build configuration list for PBXProject "tvExplorer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1339B862A0DE91000C591FB;
+			productRefGroup = F1339B902A0DE91000C591FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1339B8E2A0DE91000C591FB /* tvExplorer */,
+				F1339B9E2A0DE91400C591FB /* tvExplorerTests */,
+				F1339BA82A0DE91400C591FB /* tvExplorerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1339B8D2A0DE91000C591FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1339B9A2A0DE91400C591FB /* Preview Assets.xcassets in Resources */,
+				F1339B972A0DE91400C591FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339B9D2A0DE91400C591FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339BA72A0DE91400C591FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1339B8B2A0DE91000C591FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1339BBE2A0DF2CF00C591FB /* Show.swift in Sources */,
+				F1339BD02A0F0A4200C591FB /* DynamicGridView.swift in Sources */,
+				F1339BCE2A0F070F00C591FB /* UIApplicationExt.swift in Sources */,
+				F1339BC72A0EAAA800C591FB /* ShowDetalView.swift in Sources */,
+				F1339BCB2A0EBAA200C591FB /* ExplorerGridView.swift in Sources */,
+				F1339B932A0DE91000C591FB /* tvExplorerApp.swift in Sources */,
+				F1339BC92A0EB4F900C591FB /* ExplorerGridItemView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339B9B2A0DE91400C591FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1339BA42A0DE91400C591FB /* tvExplorerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1339BA52A0DE91400C591FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1339BAE2A0DE91400C591FB /* tvExplorerUITests.swift in Sources */,
+				F1339BB02A0DE91400C591FB /* tvExplorerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1339BA12A0DE91400C591FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1339B8E2A0DE91000C591FB /* tvExplorer */;
+			targetProxy = F1339BA02A0DE91400C591FB /* PBXContainerItemProxy */;
+		};
+		F1339BAB2A0DE91400C591FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1339B8E2A0DE91000C591FB /* tvExplorer */;
+			targetProxy = F1339BAA2A0DE91400C591FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F1339BB12A0DE91400C591FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F1339BB22A0DE91400C591FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1339BB42A0DE91400C591FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tvExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1339BB52A0DE91400C591FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tvExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1339BB72A0DE91400C591FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tvExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tvExplorer";
+			};
+			name = Debug;
+		};
+		F1339BB82A0DE91400C591FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tvExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tvExplorer";
+			};
+			name = Release;
+		};
+		F1339BBA2A0DE91400C591FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tvExplorer;
+			};
+			name = Debug;
+		};
+		F1339BBB2A0DE91400C591FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8UWJ8RN9N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nDrive.tvExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tvExplorer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1339B8A2A0DE91000C591FB /* Build configuration list for PBXProject "tvExplorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1339BB12A0DE91400C591FB /* Debug */,
+				F1339BB22A0DE91400C591FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1339BB32A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1339BB42A0DE91400C591FB /* Debug */,
+				F1339BB52A0DE91400C591FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1339BB62A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1339BB72A0DE91400C591FB /* Debug */,
+				F1339BB82A0DE91400C591FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1339BB92A0DE91400C591FB /* Build configuration list for PBXNativeTarget "tvExplorerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1339BBA2A0DE91400C591FB /* Debug */,
+				F1339BBB2A0DE91400C591FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1339B872A0DE91000C591FB /* Project object */;
+}
