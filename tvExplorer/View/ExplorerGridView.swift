@@ -33,6 +33,7 @@ struct ExplorerGridView: View {
             .navigationTitle("TV Explorer")
             .environmentObject(viewModel)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .searchable(text: $viewModel.searchText, prompt: "Search show")
         .onSubmit(of: .search){
             viewModel.fetchShowsContent(currentShow: nil)
