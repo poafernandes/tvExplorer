@@ -82,9 +82,6 @@ struct ShowsNetworkService: NetworkClient, ShowsNetworkServiceable {
     
     func searchShowAliases(id: String) async throws -> [String] {
         do {
-//            #if DEBUG
-//                print("Searching aliases for show with id \(id)")
-//            #endif
             let result = try await requestFromEndpoint(endpoint: ShowsEndpoint.searchAliases(id: id), responseModel: JsonAliases.self)
 //            let result = try await requestFromBundleFile(filename: "aliases", responseModel: JsonAliases.self)
 

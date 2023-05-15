@@ -21,7 +21,24 @@ struct JsonShowSearch: Codable {
     }
 }
 
-struct JsonShow: Codable {
+struct JsonShow: Codable, Equatable {
+    static func == (lhs: JsonShow, rhs: JsonShow) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.url == rhs.url &&
+        lhs.name == rhs.name &&
+        lhs.type == rhs.type &&
+        lhs.language == rhs.language &&
+        lhs.genres == rhs.genres &&
+        lhs.status == rhs.status &&
+        lhs.runtime == rhs.runtime &&
+        lhs.averageRuntime == rhs.averageRuntime &&
+        lhs.premiered == rhs.premiered &&
+        lhs.ended == rhs.ended &&
+        lhs.officialSite == rhs.officialSite &&
+        lhs.weight == rhs.weight &&
+        lhs.updated == rhs.updated
+    }
+    
     let id: Int
     let url: String
     let name: String
