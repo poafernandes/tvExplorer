@@ -47,7 +47,8 @@ final class ViewModel: ObservableObject {
 
             let image = try await networkService.obtainRemoteImage(url: show.image.medium)
             let aliases = try await networkService.searchShowAliases(id: String(show.id))
-
+            
+            
             return Show(id: show.id ,
                         title: show.name ,
                         ongoing: show.status.lowercased() == "ended" ? false : true,
@@ -56,7 +57,7 @@ final class ViewModel: ObservableObject {
                         endYear: show.ended?.obtainYearFromString() ?? "N/A",
                         rating: show.rating.average,
                         genres: show.genres,
-                        summary: show.summary ?? "No description available",
+                        summary: show.summary?.stripTags ?? "No description available",
                         externalUrl: show.url ,
                         aka: aliases)
         }
@@ -131,4 +132,6 @@ final class ViewModel: ObservableObject {
             }
         }
     }
+    
+      
 }

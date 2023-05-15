@@ -21,3 +21,9 @@ extension String {
         return String(year)
     }
 }
+
+extension String{
+    var stripTags : String{
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+}
