@@ -65,15 +65,15 @@ struct ShowDetailView: View {
                     + Text(show.summary)
                 }
                 .padding(20)
-            }
-            .overlay(alignment: .bottomTrailing){
                 Button {
                     let safariVC = SFSafariViewController(url: URL(string: show.externalUrl)!)
 
                     UIApplication.shared.firstKeyWindow?.rootViewController?.present(safariVC, animated: true)
                 } label: {
                     Image(systemName: "link")
+                    Text("More on TVMaze")
                 }
+                .padding(20)
             }
         }
     }

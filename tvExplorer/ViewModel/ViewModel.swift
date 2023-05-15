@@ -70,6 +70,17 @@ final class ViewModel: ObservableObject {
             fetchingShows = true
 
             if currentSection >= totalSections {
+                Task(priority: .background) {
+                    apiPage += 1
+                    showListJson = try await fetchShows(page: apiPage)
+                    let section = Array(showListJson.prefix(upTo: 30))
+                    let convertedResult = try await convertJsonShow(section: section)
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        self?.fetchingShows = false
+                        self?.showList.append(contentsOf: convertedResult)
+                    }
+                }
                 return
             } else {
                 guard let lastShowFormatted = showList.last, let startingIndex = showListJson.firstIndex(where: { show in
@@ -98,16 +109,17 @@ final class ViewModel: ObservableObject {
     }
     
     func fetchShowsContent(currentShow: Show?) -> Void{
-        fetchingShows = true
         if let show = currentShow {
             //Se > threshold pegar mais da paginação interna
             if let currentShowIndex = showList.firstIndex(of: show),
                currentShowIndex > showList.count - threshold {
                loadMoreContent(currentShow: show)
             }
-            
         } else {
             Task(priority: .background) { [weak self] in
+                DispatchQueue.main.async { [weak self] in
+                    self?.fetchingShows = true
+                }
                 showListJson = try await fetchShows(page: apiPage)
                 let section = Array(showListJson.prefix(upTo: 30))
                 let convertedResult = try await convertJsonShow(section: section)
