@@ -20,64 +20,89 @@ enum TestError: Error {
     case decodingFailed
 }
 
-struct ShowsNetworkService: NetworkClient, ShowsNetworkServiceable {
+actor ShowsNetworkService: NetworkClient, ShowsNetworkServiceable {
+    
+    private var activeRequests = [String?: Task<JsonShowsResponse,Error>]()
     
     func searchShows(page: Int) async throws -> JsonShowsResponse {
-        #if DEBUG
-            print("Searching shows without query")
-        #endif
-        do {
-            let result = try await requestFromEndpoint(endpoint: ShowsEndpoint.searchShows(page: String(page)), responseModel: JsonShowsResponse.self)
-//            let result = try await requestFromBundleFile(filename: "shows", responseModel: JsonShowsResponse.self)
-            
-            switch result {
-            case .success(let showsResponse):
-                return showsResponse
-            case .failure(let error):
+        
+        if let requestExists = activeRequests[String(page)] {
+            return try await requestExists.value
+        }
+        
+        let request = Task<JsonShowsResponse, Error> {
+            do {
+                #if DEBUG
+                    print("Searching shows without query")
+                #endif
+                let result = try await requestFromEndpoint(endpoint: ShowsEndpoint.searchShows(page: String(page)), responseModel: JsonShowsResponse.self)
+    //            let result = try await requestFromBundleFile(filename: "shows", responseModel: JsonShowsResponse.self)
+                
+                switch result {
+                case .success(let showsResponse):
+                    activeRequests[String(page)] = nil
+                    return showsResponse
+                case .failure(let error):
+                    #if DEBUG
+                        print(error)
+                    #endif
+                    throw NetworkError.invalidContent
+                }
+            } catch {
                 #if DEBUG
                     print(error)
                 #endif
-                return []
+                throw NetworkError.unexpectedStatusCode
             }
-        } catch {
-            #if DEBUG
-                print(error)
-            #endif
-            throw NetworkError.unexpectedStatusCode
         }
-
+        
+        activeRequests[String(page)] = request
+        
+        return try await request.value
     }
     
     func searchShowQuery(query: String) async throws -> JsonShowsResponse {
-        do {
-            #if DEBUG
-                print("Searching shows with query \(query)")
-            #endif
-
-            let result = try await requestFromEndpoint(endpoint: ShowsEndpoint.searchShow(query: query), responseModel: JsonSearchResponse.self)
-//            let result = try await requestFromBundleFile(filename: "search", responseModel: JsonSearchResponse.self)
-
-            switch result {
-            case .success(let showsResponse):
+        
+        if let requestExists = activeRequests[query] {
+            return try await requestExists.value
+        }
+        
+        let request = Task<JsonShowsResponse, Error>{
+            do {
+                #if DEBUG
+                    print("Searching shows with query \(query)")
+                #endif
                 
-                let resultArray: [JsonShow?] = await showsResponse.asyncMap { result in
-                    return result.show
+                let result = try await requestFromEndpoint(endpoint: ShowsEndpoint.searchShow(query: query), responseModel: JsonSearchResponse.self)
+                //            let result = try await requestFromBundleFile(filename: "search", responseModel: JsonSearchResponse.self)
+                
+                switch result {
+                case .success(let showsResponse):
+                    
+                    let resultArray: [JsonShow?] = await showsResponse.asyncMap { result in
+                        return result.show
+                    }
+                    
+                    activeRequests[query] = nil
+                    return resultArray.compactMap{ $0 }
+                case .failure(let error):
+                    #if DEBUG
+                        print(error)
+                    #endif
+                    throw NetworkError.invalidContent
                 }
-
-                return resultArray.compactMap{ $0 }
-            case .failure(let error):
+                
+            } catch {
                 #if DEBUG
                     print(error)
                 #endif
-                return []
+                throw NetworkError.unexpectedStatusCode
             }
-            
-        } catch {
-            #if DEBUG
-                print(error)
-            #endif
-            throw NetworkError.unexpectedStatusCode
         }
+        
+        activeRequests[query] = request
+        
+        return try await request.value
     }
     
     func searchShowAliases(id: String) async throws -> [String] {
