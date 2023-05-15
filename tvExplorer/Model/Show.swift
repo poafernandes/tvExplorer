@@ -13,8 +13,8 @@ struct Show: Identifiable, Hashable {
     let title: String
     let ongoing: Bool
     let image: UIImage
-    let startYear: Int
-    let endYear: Int?
+    let startYear: String
+    let endYear: String
     let rating: Double?
     let genres: [String]
     let summary: String
@@ -26,8 +26,8 @@ struct Show: Identifiable, Hashable {
         title: "Girls",
         ongoing: false,
         image: UIImage(named: "missing")!,
-        startYear: 2012,
-        endYear: 2017,
+        startYear: "2012",
+        endYear: "2017",
         rating: 6.6,
         genres: ["Drama", "Romance"],
         summary: "<p>This Emmy winning series is a comic look at the assorted humiliations and rare triumphs of a group of girls in their 20s.</p>",

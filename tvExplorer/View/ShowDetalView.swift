@@ -36,10 +36,14 @@ struct ShowDetailView: View {
                 Group{
                     Text(String(show.startYear))
                     + Text(" - ")
-                    + Text(String(show.endYear ?? 0))
+                    + Text(String(show.endYear))
                 }
                 .font(.subheadline)
                 .foregroundColor(.white)
+                Text(show.ongoing ? "Ongoing" : "Ended")
+                    .font(.subheadline)
+                    .foregroundColor(show.ongoing ? .green : .red)
+                    .fontWeight(show.ongoing ?  .medium : .bold)
                 
             }
             .padding(20)

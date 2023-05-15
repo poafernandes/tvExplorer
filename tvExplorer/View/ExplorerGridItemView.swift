@@ -28,7 +28,7 @@ struct ExplorerGridItemView: View {
                 Text(show.ongoing ? "Ongoing" : "Ended")
                     .font(.subheadline)
                     .foregroundColor(show.ongoing ? .green : .red)
-                    .fontWeight(show.ongoing ? .medium : .bold)
+                    .fontWeight(show.ongoing ?  .medium : .bold)
                 .frame(maxWidth: .infinity)
 
             }
