@@ -10,14 +10,18 @@ import SafariServices
 
 
 struct ShowDetailView: View {
-    @Binding var show: Show
-    @State private var contentSize = CGSize.zero
     
+    @EnvironmentObject var viewModel: ViewModel
+    
+    var show: Show
+        
     var body: some View {
         AdaptableStackView {
             VStack {
-                Image(show.image)
+                Image(uiImage: show.image)
+                    .resizable()
                     .border(.white, width: 5)
+                    .aspectRatio(contentMode: .fit)
                     .overlay(alignment: .topLeading) {
                         Text(String(show.rating ?? 0))
                             .padding(6)
@@ -41,35 +45,35 @@ struct ShowDetailView: View {
             .padding(20)
             .frame(maxWidth: .infinity)
             .background(Color(uiColor: .systemGray))
-            VStack(alignment: .leading, spacing: 15) {
-                Text("Known as: ")
-                    .foregroundColor(.primary)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                + Text(show.aka?.joined(separator: ", ") ?? "N/A")
-                Text("Genres: ")
-                    .foregroundColor(.primary)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                + Text(show.genres.joined(separator: ", "))
-                
-                Text("About: ")
-                    .foregroundColor(.primary)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                + Text(show.summary)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("Known as: ")
+                        .foregroundColor(.primary)
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    + Text(show.aka?.joined(separator: ", ") ?? "N/A")
+                    Text("Genres: ")
+                        .foregroundColor(.primary)
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    + Text(show.genres.joined(separator: ", "))
+                    
+                    Text("About: ")
+                        .foregroundColor(.primary)
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    + Text(show.summary)
+                }
+                .padding(20)
             }
-            .padding(20)
+            .overlay(alignment: .bottomTrailing){
+                Button {
+                    let safariVC = SFSafariViewController(url: URL(string: show.externalUrl)!)
 
-            Spacer()
-
-            Button {
-                let safariVC = SFSafariViewController(url: URL(string: show.externalUrl)!)
-                
-                UIApplication.shared.firstKeyWindow?.rootViewController?.present(safariVC, animated: true)
-            } label: {
-                Image(systemName: "link")
-                Text("More about \(show.title)")
+                    UIApplication.shared.firstKeyWindow?.rootViewController?.present(safariVC, animated: true)
+                } label: {
+                    Image(systemName: "link")
+                }
             }
         }
     }
@@ -77,6 +81,7 @@ struct ShowDetailView: View {
 
 struct ShowDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowDetailView(show: .constant(exampleShow))
+        ShowDetailView(show: Show.sampleShow)
+            .environmentObject(ViewModel(networkService: ShowsNetworkService()))
     }
 }

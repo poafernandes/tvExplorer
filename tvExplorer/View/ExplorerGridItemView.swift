@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ExplorerGridItemView: View {
-
-    @Binding var show: Show
+    
+    @EnvironmentObject var viewmodel: ViewModel
+    
+    var show: Show
     
     var body: some View {
         
         ZStack{
-            Image(show.image)
+            Image(uiImage: show.image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFit()
+
             VStack(spacing: 10) {
                 Spacer()
                 Text(show.title)
@@ -40,6 +43,7 @@ struct ExplorerGridItemView: View {
 
 struct ExplorerGridItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ExplorerGridItemView(show: .constant(exampleShow))
+        ExplorerGridItemView(show: Show.sampleShow)
+            .environmentObject(ViewModel(networkService: ShowsNetworkService()))
     }
 }
