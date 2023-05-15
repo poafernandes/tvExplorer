@@ -11,14 +11,17 @@ import SwiftUI
 final class ViewModel: ObservableObject {
     
     @Published var showList = [Show]()
-    @Published var searchText = ""
+    @Published var searchText = "" {
+        didSet {
+            searchDone = false
+        }
+    }
     @Published var fetchingShows = false
     
     private var showListJson: JsonShowsResponse = []
     
     private var totalSections: Int {
         let sections = ceil(Double(showListJson.count / sectionSize))
-        print("Total sections: \(sections) Current section: \(currentSection)")
         return Int(sections)
     }
     
@@ -27,6 +30,7 @@ final class ViewModel: ObservableObject {
     private var threshold = 15
     private let sectionSize = 30
     private var running = false
+    private var searchDone = false
     
     var networkService: ShowsNetworkService
     
@@ -66,7 +70,6 @@ final class ViewModel: ObservableObject {
     }
     
     fileprivate func loadMoreContent(currentShow: Show) {
-        print("Fetching: \(fetchingShows)")
         if fetchingShows != true {
             fetchingShows = true
 
@@ -74,7 +77,7 @@ final class ViewModel: ObservableObject {
                 Task(priority: .background) {
                     apiPage += 1
                     showListJson = try await fetchShows(page: apiPage)
-                    let section = Array(showListJson.prefix(upTo: 30))
+                    let section = Array(showListJson.prefix(30))
                     let convertedResult = try await convertJsonShow(section: section)
                     
                     DispatchQueue.main.async { [weak self] in
@@ -110,28 +113,43 @@ final class ViewModel: ObservableObject {
     }
     
     func fetchShowsContent(currentShow: Show?) -> Void{
-        if let show = currentShow {
-            //Se > threshold pegar mais da paginação interna
-            if let currentShowIndex = showList.firstIndex(of: show),
-               currentShowIndex > showList.count - threshold {
-               loadMoreContent(currentShow: show)
+        if searchText.isEmpty || searchDone {
+            if let show = currentShow {
+                //Se > threshold pegar mais da paginação interna
+                if let currentShowIndex = showList.firstIndex(of: show),
+                   currentShowIndex > showList.count - threshold {
+                   loadMoreContent(currentShow: show)
+                }
+            } else {
+                Task(priority: .background) { [weak self] in
+                    DispatchQueue.main.async { [weak self] in
+                        self?.fetchingShows = true
+                    }
+                    showListJson = try await fetchShows(page: apiPage)
+                    let section = Array(showListJson.prefix(30))
+                    let convertedResult = try await convertJsonShow(section: section)
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        self?.fetchingShows = false
+                        self?.showList = convertedResult
+                    }
+                }
             }
         } else {
             Task(priority: .background) { [weak self] in
                 DispatchQueue.main.async { [weak self] in
                     self?.fetchingShows = true
                 }
-                showListJson = try await fetchShows(page: apiPage)
-                let section = Array(showListJson.prefix(upTo: 30))
+                showListJson = try await fetchQueriedShows(query: searchText)
+                let section = Array(showListJson.prefix(30))
                 let convertedResult = try await convertJsonShow(section: section)
                 
                 DispatchQueue.main.async { [weak self] in
                     self?.fetchingShows = false
                     self?.showList = convertedResult
+                    self?.searchDone = true
                 }
             }
         }
     }
-    
-      
 }
